@@ -1,0 +1,27 @@
+.main-component{
+
+background-color:#253C59;
+
+}
+
+
+.container-login{
+    
+    display:flex;
+    flex-direction:column;
+    background-color:whitesmoke;
+    width : 400px;
+    height : 600px;
+    margin-top: 15%;
+    padding:5%;
+    margin-bottom : 15%;
+   
+    }
+
+
+#image-login{
+
+    width:100px;
+    height:100px;
+
+}

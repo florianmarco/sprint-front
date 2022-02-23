@@ -1,0 +1,50 @@
+.main-container{
+
+width : auto;
+height : 200px;
+background-color:whitesmoke;
+
+
+
+}
+
+.navbar-css{
+
+height:30%;
+background-color:#262624;
+display:flex;
+
+
+
+}
+
+.middle-nav-container{
+
+    height:40%;
+
+}
+
+.action-calendar-container{
+
+    height:30%;
+    background-color:#B8BABF;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    
+}
+
+.action-menu-css{
+
+    display: flex;
+    flex-direction:column;
+
+}
+
+.custom-action-title-menu{
+
+
+    color:blue;
+    font-size: 10px;
+
+}
