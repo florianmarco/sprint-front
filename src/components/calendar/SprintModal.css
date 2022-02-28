@@ -1,0 +1,54 @@
+.title-css{
+
+color:blue;
+margin-right: 5px;
+
+
+}
+
+.container-sprint-details{
+
+display: flex;
+flex-direction:row;
+justify-content:left;
+
+
+}
+
+#icone-css {
+
+margin:0 !important;
+padding:0 !important;
+
+
+}
+
+.container-details-sprint{
+
+margin-top:20px;
+margin-bottom:20px;
+
+
+}
+
+.description-space{
+
+border:2px solid blue;
+margin-top:20px;
+margin-bottom:20px;
+height:50px;
+
+
+}
+
+.ml{
+
+margin-left:20px;
+
+}
+
+.description-ml{
+
+margin-left:24px;
+
+}

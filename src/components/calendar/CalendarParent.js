@@ -6,6 +6,8 @@ import dayGridPlugin from '@fullcalendar/daygrid' ;
 import DashboardCalendar from '../dashboard/DashboardCalendar';
 import interactionPlugin from '@fullcalendar/interaction';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
+import SprintModal from './SprintModal';
+
 
 
 
@@ -21,18 +23,32 @@ const CalendarParent = () => {
 
       const [currentEvents,setCurrentEvents] = useState();
 
+      const [show, setShow] = useState(false);
+      const [titleSprint,setTitleSprint] = useState()
+
+
+
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+
       const handleEvents = ((events) => {
         setCurrentEvents(events)
       })
+
+      
     
 
 
-      const handleEventClick =((clickInfo) => {
+      const handleEventClick =(() => {
           
-        if (alert(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-          clickInfo.event.remove()
-        }
+        // if (alert(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+        //   clickInfo.event.remove()
+        // }
 
+        handleShow()
+        setTitleSprint(currentEvents[0]._def.title)
+      
+      
       })
 
       const  handleDateSelect = ((selectInfo) => {
@@ -52,11 +68,23 @@ const CalendarParent = () => {
         }
       })
 
+      
+
 
     return (
       
         <>
         <DashboardCalendar/>
+
+      
+        <SprintModal 
+        show={show}
+        titleSprint={titleSprint}
+        handleClose={handleClose}
+        
+      
+        />
+         
             
         <FullCalendar
         plugins={[ dayGridPlugin,listPlugin,interactionPlugin]}
