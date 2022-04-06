@@ -1,16 +1,19 @@
 import React,{ useState,useEffect} from 'react';
 import { Container,Row,Col} from 'react-bootstrap';
-import {BsPlusLg} from "react-icons/bs";
+import {BsPlusLg,BsFillPersonPlusFill} from "react-icons/bs";
 import { IconContext } from 'react-icons';
 import "./DashboardCalendar.css"
 import PolesSelect from "./PolesSelect";
 import EmployeesSelect from "./EmployeesSelect";
 import CreateSprintModale from "./CreateSprintModale";
 import axios from 'axios';
+import {useNavigate } from "react-router-dom";
 
 
 
 const DashboardCalendar = () => {
+
+  let navigate = useNavigate();
 
     /**
      * State : poleSelected
@@ -42,11 +45,17 @@ const DashboardCalendar = () => {
         
         setShow(true);
     })
+
+
    
 
     /**
      * ----------Fin gestion modale------------------
      */
+
+     /**
+      * Gestion de la modal pour créer un utilisateur.
+      */
 
     useEffect(() => {
 
@@ -97,6 +106,13 @@ const DashboardCalendar = () => {
 
      }
 
+     function navigateTo(){
+
+
+      navigate("/userManager")
+
+     }
+
      /*
       Cette méthode permet un callback pour faire remonter l'information "liste des différents poles" du composant enfant ActionFilter
       L'objectif étant de centraliser les states dans le composant enfant
@@ -141,14 +157,18 @@ const DashboardCalendar = () => {
         <>
         <Container fluid className="main-container">
 
-            <Row className="navbar-css">
-
-
-            </Row>
+            
 
             <Row className="middle-nav-container">
+              
 
-
+            <IconContext.Provider
+                        
+                        value={{ color: 'orange', size: '30px',padding:'0px' }}
+                        >
+                        <div onClick={navigateTo}><BsFillPersonPlusFill/></div>
+    
+                    </IconContext.Provider>
 
             </Row>
 
